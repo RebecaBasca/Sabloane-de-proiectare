@@ -1,64 +1,28 @@
-from elements import *
-
-class Book:
-    def __init__(self,title):
-        self.title = title
-        self.authors = []
-        self.chapters = []
-        self.tableOfContents = TableOfContents()
-
-
-    def addAuthor(self,name):
-        self.authors.append(name)
-
-    def createChapter(self,title):
-        newChapter = Chapter(title)
-        self.chapters.append(newChapter)
-        return len(self.chapters)-1
-
-    def getChapter(self,id):
-        return self.chapters[id]
-
-
-    def print(self):
-        print(f"Book: {self.title}")
-        print("Authors:")
-        if(not len(self.authors)):
-            print("unknown")
-        else:
-            for author in self.authors:
-                author.print()
-
-        print("Content:")
-
-        if (not len(self.chapters)):
-            print("empty book")
-            return
-
-        for item in self.chapters:
-            item.print()
-
-
-
+from Author import Author
+from Section import Section
+from Image import Image
+from Paragraph import Paragraph
+from Book import Book
 
 if __name__ == "__main__":
-    book = Book("Disco Titanic")
-    author = Author("Radu Pavel")
+    book = Book("Noapte buna copii!")
+    author = Author("Radu Pavel Gheo")
 
     book.addAuthor(author)
-    indexChapterOne = book.createChapter("Chapter One")
 
-    chp1 = book.getChapter(indexChapterOne)
+    cap1 = Section("Capitolul 1")
+    cap11 = Section("Capitolul 1.1")
+    cap111 = Section("Capitolul 1.1.1")
+    cap1111 = Section("Subchapter 1.1.1.1")
+    book.add(Paragraph("Multumesc celor care..."))
+    book.add(cap1)
+    cap1.add(Paragraph("Moto capitol"))
+    cap1.add(cap11)
+    cap11.add(Paragraph("Text from chapter 1.1"))
+    cap11.add(cap111)
+    cap111.add(Paragraph("Text from subchapter 1.1.1"))
+    cap111.add(cap1111)
+    cap1111.add(Image("Image from subchapter 1.1.1.1"))
 
-    indexSubchapterOneOne = chp1.createSubChapter("Subchapter 1.1")
-
-    subChapterOneOne = chp1.getSubChapter(indexSubchapterOneOne)
-
-    subChapterOneOne.createNewParagraph("Paragraph 1")
-    subChapterOneOne.createNewParagraph("Paragraph 2")
-    subChapterOneOne.createNewParagraph("Paragraph 3")
-    subChapterOneOne.createNewImage("Image 1")
-    subChapterOneOne.createNewParagraph("Paragraph 4")
-    subChapterOneOne.createNewTable("Table 1")
 
     book.print()
