@@ -5,17 +5,14 @@ class Section(Element):
         self.title = title
         self._children = []
 
-    def add(self, item):
-        self._children.append(item)
+    def add(self, component):
+        self._children.append(component)
 
     def remove(self, component):
-        self._children.remove(item)
+        self._children.remove(component)
 
     def print(self):
         print(self.title)
         for child in self._children:
             child.print()
-
-
-
 

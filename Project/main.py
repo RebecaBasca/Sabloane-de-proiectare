@@ -1,28 +1,42 @@
 from Author import Author
+from Element import Element
 from Section import Section
-from Image import Image
-from Paragraph import Paragraph
 from Book import Book
+from Image import Image
+from ImageProxy import ImageProxy
+from Table import Table
+from Paragraph import Paragraph
+import time
 
 if __name__ == "__main__":
-    book = Book("Noapte buna copii!")
-    author = Author("Radu Pavel Gheo")
 
-    book.addAuthor(author)
+    start = time.time()
 
-    cap1 = Section("Capitolul 1")
-    cap11 = Section("Capitolul 1.1")
-    cap111 = Section("Capitolul 1.1.1")
-    cap1111 = Section("Subchapter 1.1.1.1")
-    book.add(Paragraph("Multumesc celor care..."))
-    book.add(cap1)
-    cap1.add(Paragraph("Moto capitol"))
-    cap1.add(cap11)
-    cap11.add(Paragraph("Text from chapter 1.1"))
-    cap11.add(cap111)
-    cap111.add(Paragraph("Text from subchapter 1.1.1"))
-    cap111.add(cap1111)
-    cap1111.add(Image("Image from subchapter 1.1.1.1"))
+    img1 = ImageProxy("Pamela Anderson")
+    img2 = ImageProxy("Kim Kardashian")
+    img3 = ImageProxy("Kirby Griffin")
 
+    playboyS1 = Section("Front Cover")
+    playboyS1.add(img1)
 
-    book.print()
+    playboyS2 = Section("Summer Girls")
+    playboyS2.add(img2)
+    playboyS2.add(img3)
+
+    playboy = Book("Playboy")
+
+    playboy.add(playboyS1)
+    playboy.add(playboyS2)
+
+    end = time.time()
+    print("creation of content (time): ",end-start)
+
+    start = time.time()
+    playboyS1.print()
+    end = time.time()
+    print("printing section 1 (time): ", end - start)
+
+    start = time.time()
+    playboyS1.print()
+    end = time.time()
+    print("printing section 1 again (time): ", end - start)
