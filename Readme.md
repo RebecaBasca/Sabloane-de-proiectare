@@ -8,3 +8,8 @@ https://github.com/RebecaBasca/Sabloane-de-proiectare/tree/1978c6c703c7266a7aedc
 https://github.com/RebecaBasca/Sabloane-de-proiectare/tree/343c920bb5eb3846111e90b3c447203cba86c495
 
 all good
+
+# Feedback lab4
+https://github.com/RebecaBasca/Sabloane-de-proiectare/tree/8e2ee0b5cb94e14bda9db8ecd1f77324b2b8b299
+
+all good
