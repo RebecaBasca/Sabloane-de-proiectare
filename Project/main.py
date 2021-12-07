@@ -1,42 +1,49 @@
 from Author import Author
 from Element import Element
 from Section import Section
-from Book import Book
 from Image import Image
 from ImageProxy import ImageProxy
 from Table import Table
 from Paragraph import Paragraph
 import time
+from AlignStrategy import AlignStrategy
+from AlignLeft import AlignLeft
+from AlignRight import AlignRight
+from DocumentManager import DocumentManager
+from Book import Book
+
 
 if __name__ == "__main__":
 
-    start = time.time()
+    myBook = Book("My Book")
+    DocumentManager.__new__(myBook)
+    me = Author("Myself")
+    myBook.addAuthor(me)
 
-    img1 = ImageProxy("Pamela Anderson")
-    img2 = ImageProxy("Kim Kardashian")
-    img3 = ImageProxy("Kirby Griffin")
 
-    playboyS1 = Section("Front Cover")
-    playboyS1.add(img1)
 
-    playboyS2 = Section("Summer Girls")
-    playboyS2.add(img2)
-    playboyS2.add(img3)
+    cap1 = Section("Chapter 1")
+    p1 = Paragraph("Paragraph 1")
+    p2 = Paragraph("Paragraph 2")
+    p3 = Paragraph("Paragraph 3")
+    p4 = Paragraph("Paragraph 4")
 
-    playboy = Book("Playboy")
+    cap1.add(p1)
+    cap1.add(p2)
+    cap1.add(p3)
+    cap1.add(p4)
 
-    playboy.add(playboyS1)
-    playboy.add(playboyS2)
+    print("-------Printing without alignment:")
+    cap1.print()
 
-    end = time.time()
-    print("creation of content (time): ",end-start)
+    p1.setAlignStrategy(AlignRight())
+    p2.setAlignStrategy(AlignLeft())
+    p3.setAlignStrategy(AlignRight())
+    p4.setAlignStrategy(AlignLeft())
 
-    start = time.time()
-    playboyS1.print()
-    end = time.time()
-    print("printing section 1 (time): ", end - start)
+    print("\n-------Printing with alignment:")
+    cap1.print()
 
-    start = time.time()
-    playboyS1.print()
-    end = time.time()
-    print("printing section 1 again (time): ", end - start)
+
+    print(myBook)
+
