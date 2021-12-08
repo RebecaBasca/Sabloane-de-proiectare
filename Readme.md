@@ -13,3 +13,9 @@ all good
 https://github.com/RebecaBasca/Sabloane-de-proiectare/tree/8e2ee0b5cb94e14bda9db8ecd1f77324b2b8b299
 
 all good
+
+# Feedback lab5
+https://github.com/RebecaBasca/Sabloane-de-proiectare/commit/2672cda084ed4ea1fbf5d9969e844eecb9d6d16d
+
+- strategy OK
+- singleton implementation not OK
