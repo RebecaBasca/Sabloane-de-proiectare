@@ -13,6 +13,6 @@ class Section(Element):
 
     def print(self):
         print(self.title)
-        for child in self._children:
-            child.print()
+        for elem in self._children:
+            elem.print()
 

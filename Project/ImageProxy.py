@@ -2,8 +2,8 @@ from Element import Element
 from Image import Image
 
 class ImageProxy(Element):
-    def __init__(self, url):
-        self.url = url
+    def __init__(self, content):
+        self.content = content
         self.realImage = None
 
     def add(self, component):
@@ -19,4 +19,4 @@ class ImageProxy(Element):
 
     def loadImage(self):
         if(self.realImage == None):
-            self.realImage = Image(self.url)
+            self.realImage = Image(self.content)

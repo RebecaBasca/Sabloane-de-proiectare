@@ -2,8 +2,8 @@ from Element import Element
 import time
 
 class Image(Element):
-    def __init__(self, url):
-        self.url = url
+    def __init__(self, content):
+        self.content = content
         time.sleep(5)
 
     def add(self, component):
@@ -13,5 +13,5 @@ class Image(Element):
         pass;
 
     def print(self):
-        print("Image with url:", self.url)
+        print("Image with url:", self.content)
 

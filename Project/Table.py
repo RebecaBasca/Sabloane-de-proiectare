@@ -2,7 +2,7 @@ from Element import Element
 
 class Table(Element):
     def __init__(self, content):
-        self.link = content
+        self.content = content
 
     def add(self, item):
         pass;

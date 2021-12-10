@@ -10,3 +10,6 @@ class Element(metaclass=abc.ABCMeta):
     @abc.abstractmethod
     def print(self):
         pass
+
+    def accept(self, visitor):
+        visitor.visit(self)
