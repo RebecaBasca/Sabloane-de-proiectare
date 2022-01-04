@@ -19,3 +19,10 @@ https://github.com/RebecaBasca/Sabloane-de-proiectare/commit/2672cda084ed4ea1fbf
 
 - strategy OK
 - singleton implementation not OK
+
+# Feedback lab6
+https://github.com/RebecaBasca/Sabloane-de-proiectare/tree/b2ee3c788bba3091b7479400a9ee84868c26ca0e
+
+- visitor patters is based on the type of the object. In python, the visit method should be split by type, and do the operation according to the object type
+
+# Proposed grade: 9
